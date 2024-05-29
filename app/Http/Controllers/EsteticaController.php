@@ -2,21 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Chirp;
-use Illuminate\Http\RedirectResponse;
+use App\Models\estetica;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
 
-class ChirpController extends Controller
+class EsteticaController extends Controller
 {
+
     /**
      * Display a listing of the resource.
-     */
-
-    public function index(): Response
+     */public function index(): Response 
     {
-        return Inertia::render('Chirps/Index', [
+        return Inertia::render('Estetica/Dashboard', [
             //
         ]);
     }
@@ -32,22 +30,15 @@ class ChirpController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request)
     {
         //
-        $validated = $request->validate([
-            'message' => 'required|string|max:255',
-        ]);
- 
-        $request->user()->chirps()->create($validated);
- 
-        return redirect(route('chirps.index'));
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Chirp $chirp)
+    public function show(estetica $estetica)
     {
         //
     }
@@ -55,7 +46,7 @@ class ChirpController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Chirp $chirp)
+    public function edit(estetica $estetica)
     {
         //
     }
@@ -63,7 +54,7 @@ class ChirpController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Chirp $chirp)
+    public function update(Request $request, estetica $estetica)
     {
         //
     }
@@ -71,7 +62,7 @@ class ChirpController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Chirp $chirp)
+    public function destroy(estetica $estetica)
     {
         //
     }
